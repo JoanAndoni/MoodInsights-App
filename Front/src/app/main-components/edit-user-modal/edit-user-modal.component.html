@@ -1,0 +1,32 @@
+<div class="modal-mt-bg auth">
+  <div class="modal-mt">
+    <h1 class="title">Editar Usuario</h1>
+    <form class="form">
+      <div>
+        <label for="name">Nombre</label>
+        <input class="textField" type="text" name="name" value="{{currentUser?.name}}">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input class="textField" type="text" name="email" value="{{currentUser?.mail}}">
+      </div>
+      <div>
+        <label for="role">Rol</label>
+        <select class="textField" name="role" *ngIf="currentUser?.role == 'admin';else options">
+          <option value="user">Usuario</option>
+          <option value="admin" selected>Admin</option>
+        </select>
+
+        <ng-template #options>
+          <select class="textField" name="role">
+            <option value="user" selected>Usuario</option>
+            <option value="admin">Admin</option>
+          </select>
+        </ng-template>
+        
+      </div>
+      <button type="submit" class="g_button">Guardar</button>
+    </form>
+    <button class="closeEdit" (click)="toggle()">close</button>
+  </div>
+</div>

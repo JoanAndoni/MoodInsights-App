@@ -1,0 +1,32 @@
+<section id="dashboard">
+  <div class="saludos">
+    <h1>{{'k.hi'|translate}} {{user.name.split(' ')[0]}}</h1>
+    <h6>{{'dashboard.salute'|translate}}</h6>
+  </div>
+
+  <h2>{{'dashboard.graphTitle.spotify' | translate}}</h2>
+  <apx-chart
+    *ngIf="chartSpotifyOptions"
+    [series]="chartSpotifyOptions.series"
+    [colors]="chartSpotifyOptions.colors"
+    [chart]="chartSpotifyOptions.chart"
+    [xaxis]="chartSpotifyOptions.xaxis"
+    [title]="chartSpotifyOptions.title"
+    [fill]="chartSpotifyOptions.fill"
+    [stroke]="chartSpotifyOptions.stroke"
+    [dataLabels]="chartSpotifyOptions.dataLabels"
+  ></apx-chart>
+
+  <h2>{{'dashboard.graphTitle.facebook' | translate}}</h2>
+  <apx-chart
+    *ngIf="chartFacebookOptions"
+    [series]="chartFacebookOptions.series"
+    [colors]="chartFacebookOptions.colors"
+    [chart]="chartFacebookOptions.chart"
+    [xaxis]="chartFacebookOptions.xaxis"
+    [title]="chartFacebookOptions.title"
+    [fill]="chartFacebookOptions.fill"
+    [stroke]="chartFacebookOptions.stroke"
+    [dataLabels]="chartFacebookOptions.dataLabels"
+  ></apx-chart>
+</section>

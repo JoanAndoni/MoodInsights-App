@@ -1,0 +1,32 @@
+<section class="auth">
+  <div class="authInner">
+    <div class="authFormContainer">
+      <h1 class="title">Registro</h1>
+      <div class="authForm">
+        <label>Nombre</label>
+        <input type="text" name="name" placeholder="Juan Gonza" class="textField" required [(ngModel)]="user.name">
+        <label class="es">Correo</label>
+        <input type="email" name="mail" placeholder="juandom@ejemplo.com" class="textField" required [(ngModel)]="user.mail">
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Introduce tu contraseña" class="textField" required [(ngModel)]="user.password">
+        <label>Confirmar Contraseña</label>
+        <input type="password" name="c_password" placeholder="confirma tu contraseña" class="textField" required [(ngModel)]="repeatedPassword">
+        <button type="submit" class="g_button" (click)="signUp()">Registrate</button>
+      </div>
+      <span>¿Aun no tienes cuenta? ¿Ya tienes cuenta? <a class="link" [routerLink]="['/auth/login']">Ingresa</a></span>
+    </div>
+
+    <div class="authBG"><span
+      class="circle"><svg
+        id="background-circle" data-functional-selector="icon" viewBox="0 0 32 32" focusable="false" stroke="none"
+        stroke-width="0">
+        <path
+          d="M16,27 C9.92486775,27 5,22.0751322 5,16 C5,9.92486775 9.92486775,5 16,5 C22.0751322,5 27,9.92486775 27,16 C27,22.0751322 22.0751322,27 16,27 Z"
+          style="fill: rgb(204, 204, 204);"></path>
+      </svg></span><span class="square"><svg id="background-square"
+        data-functional-selector="icon" viewBox="0 0 32 32" focusable="false" stroke="none" stroke-width="0">
+        <path d="M7,7 L25,7 L25,25 L7,25 L7,7 Z" style="fill: rgb(204, 204, 204);"></path>
+      </svg></span>
+  </div>
+  </div>
+</section>

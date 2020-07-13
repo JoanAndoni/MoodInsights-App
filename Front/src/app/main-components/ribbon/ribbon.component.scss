@@ -1,0 +1,48 @@
+@import '../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+@mixin ribbon($right, $isRed){
+  position: absolute;
+  top: 100px;
+  height: 50px;
+  width: 200px;
+  color: white;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  @if $right {
+    right: 0;
+    left: auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 35% 50%);
+    justify-content: flex-end;
+  } @else {
+    right: auto;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0, 65% 50%, 100% 100%, 0% 100%);
+    justify-content: flex-start;
+  }
+  @if $isRed {
+    background: $red;
+  } @else {
+    background: $green;
+  }
+}
+
+.ribbon-right{
+  &-red{
+    @include ribbon(true, true);
+  }
+  &-green{
+    @include ribbon(true, false);
+  }
+}
+
+.ribbon-left{
+  &-red{
+    @include ribbon(false, true);
+  }
+  &-green{
+    @include ribbon(false, false);
+  }
+}

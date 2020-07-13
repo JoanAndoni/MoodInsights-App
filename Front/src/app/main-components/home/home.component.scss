@@ -1,0 +1,81 @@
+@import '../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+.carousel-mood{
+  margin-top: $navHeight;
+  @extend .carousel;
+  @extend .carousel-fade;
+  .carousel-item {
+    background: black;
+    img {
+      width: 100%;
+      height: 40vw;
+      object-fit: cover;
+      opacity: 0.8;
+      @media screen and (max-width: 991px) {
+        height: 60vh;
+      }
+    }
+    h5{
+      color: white;
+    }
+    p{
+      color: white;
+    }
+  }
+}
+
+.about-mood{
+  background: $secondary;
+  padding: 5%;
+  .row-about{
+    @extend .row;
+    @extend .justify-content-between;
+    max-width: 1140px;
+    margin: 40px auto;
+    .text{
+      @extend .col-md-6;
+      h3,p,li{
+        color: white;
+      }
+      @media (max-width: 767px){
+        text-align: justify;
+      }
+    }
+    .image{
+      @extend .col-md-6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        max-height: 200px;
+      }
+    }
+  }
+}
+
+.integrantes{
+  @extend .container;
+  @extend .mt-5;
+  h3{
+    text-align: center;
+  }
+  .card-mood{
+    @extend .card;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    cursor: pointer;
+  }
+}
+
+.modal-integrante{
+  @extend .modal;
+  text-align: center;
+  img{
+    max-width: 80%;
+  }
+}
+
+.get-started{
+  padding: 50px;
+  text-align: center;
+}

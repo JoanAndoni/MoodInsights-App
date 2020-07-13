@@ -1,0 +1,46 @@
+@import '../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+.footer {
+  @extend .navbar;
+  @extend .navbar-dark;
+  @extend .navbar-expand-lg;
+  font-size: 0.8em !important;
+  width: 100vw;
+  background-color: $primary !important;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  border-top: 1px solid #e9ecef;
+  z-index: 100;
+  .footer-row{
+      @extend .row;
+      @extend .justify-content-center;
+      width: 100%;
+      margin: 0;
+      .copyright{
+        p {
+            margin: 0;
+        }
+      }
+      .languages{
+          @extend .col-12;
+          @extend .col-md-6;
+          @extend .ml-auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          @media screen and (max-width: 575px){
+            justify-content: center;
+          }
+          .language-item{
+            margin: 0 10px;
+            cursor: pointer;
+          }
+      }
+  }
+}

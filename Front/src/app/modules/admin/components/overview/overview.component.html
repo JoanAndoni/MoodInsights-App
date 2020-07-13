@@ -1,0 +1,60 @@
+<section>
+  <h1>Admin Dashboard</h1>
+  <h6>Aqui puedes administar Mood Tracker</h6>
+
+  <div class="card">
+    <h2 class="title">Usuarios</h2>
+    <table class="usersTable">
+      <tr>
+        <th
+          class="cursor"
+          (click)="orderByName()"
+          [ngClass]="orderBy === 'name' ? orderDirection === 'asc' ? 'ascending' : 'descending' : ''"
+        >
+          Nombre
+        </th>
+        <th
+          class="cursor"
+          (click)="orderByEmail()"
+          [ngClass]="orderBy === 'email' ? orderDirection === 'asc' ? 'ascending' : 'descending' : ''"
+        >
+          Correo
+        </th>
+        <th>Redes Vinculadas</th>
+        <th>Rol</th>
+        <th>Opciones</th>
+      </tr>
+  
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{user.name}}</td>
+        <td>{{user.mail}}</td>
+        <td class="usersTableRedes">
+          <span class="red" *ngIf=user.connectedAccounts.facebook?.token><img src="https://i.pinimg.com/originals/d2/e5/35/d2e5359f8402cb8d3d7b22c463f9013b.png" alt="Facebook"></span>
+          <span class="red" *ngIf=user.connectedAccounts.TW><img src="https://i.pinimg.com/originals/b9/f4/df/b9f4dfa0916910b8afb2547a3f6aff30.png" alt="Twitter"></span>
+          <span class="red" *ngIf=user.connectedAccounts.spotify?.token?.value><img src="https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png" alt="Spotify"></span>
+        </td>
+        <td>
+          <span *ngIf="user.role; else elseRol">{{user.role}}</span>
+          <ng-template #elseRol>user</ng-template>
+          <fa-icon *ngIf="user.role == 'admin'" [icon]="faUserLock" class="adminBadge"></fa-icon>
+        </td>
+        <td class="usersTableOpciones">
+          <button *ngIf='user.mail !== currentUser.mail' (click)='deleteUser(i)'><fa-icon [icon]="faTrash"></fa-icon></button>
+          <button (click)='editUser(i)'><fa-icon [icon]="faEdit"></fa-icon></button>
+        </td>
+      </tr>
+    </table>
+    <div class="pagination">
+      <div
+        class="page"
+        *ngFor="let p of pages; let i = index"
+        (click)="setPage(i)"
+        [ngClass]="page === i ? 'active' : ''"
+      >
+        {{p}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-edit-user-modal *ngIf="editingUser" (close)="changeEditUserModal()" [currentUser]=selectedUser></app-edit-user-modal>

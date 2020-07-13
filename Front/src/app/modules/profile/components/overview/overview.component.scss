@@ -1,0 +1,122 @@
+@import '../../../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+.profile{
+  padding: 100px 20px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 740px;
+  .header{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    border-bottom: 1px solid $lightGray;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+    img{
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 100%;
+      margin-bottom: 20px;
+    }
+    .username{
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+  .information {
+    padding-bottom: 50px;
+    border-bottom: 1px solid $lightGray;
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    .edit-actions{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      a{
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      .edit{
+        color: $primary;
+        text-decoration: underline;
+      }
+      .cancel{
+        color: $dark;
+        text-decoration: underline;
+      }
+    }
+    input{
+      width: 100%;
+      margin-bottom: 20px;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid transparent;
+      padding: 5px 10px;
+    }
+    &.editing{
+      input{
+        border-color: $dark;
+      }
+    }
+  }
+  .social-networks{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 50px;
+
+    .social-network{
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      img{
+        width: 40px;
+        flex: 0 0 40px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+        margin-right: 10px;
+      }
+      p{
+        flex: 1 0 0;
+        margin: 0;
+      }
+      a{
+        background: $dark;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .extras{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+    .signout{
+      background: rgb(216, 61, 61);
+      color: white;
+      padding: 10px 30px;
+      border-radius: 40px;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover{
+        background: rgb(197, 52, 52);
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import "../../../../variables";
+@import "~bootstrap/scss/bootstrap.scss";
+
+#dashboard {
+    padding-top: 100px;
+    margin-bottom: 100px;
+    height: auto;
+}
+
+.saludos {
+    margin-bottom: 40px;
+}
+
+.chart-alone {
+    margin: 40px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-bar-chart {
+    height: auto;
+    overflow: scroll;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .chart {
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+        grid-template-rows: repeat(11, 1fr);
+        grid-column-gap: 5px;
+        // height: 40vw;
+        height: auto;
+        width: 90vw;
+        padding: 5px 10px;
+
+        [class*="bar"] {
+            border-radius: $borderizado $borderizado 0 0;
+            transition: all 0.6s ease;
+            background-color: #cccccc;
+            grid-row-start: 1;
+            grid-row-end: 11;
+        }
+
+        [class*="bar"]:hover {
+            opacity: 0.6;
+        }
+
+        [class*="Social"] {
+            padding: 6px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        $totalRows: 11;
+        $totalColumns: 13;
+        @mixin chartValue($data) {
+            $result: $totalRows - $data;
+            grid-row-start: $result;
+        }
+
+        @for $i from 1 through $totalRows {
+            .bar-#{$i} {
+                @include chartValue($i);
+            }
+        }
+
+        @for $i from 1 through $totalColumns - 1 {
+            .Social-#{$i} {
+                grid-row: 11;
+                grid-column: $i;
+            }
+        }
+
+        @for $i from 1 through $totalRows - 1 {
+            .value-#{$i} {
+                grid-row: $totalRows - $i;
+                grid-column: 13;
+            }
+        }
+
+        [class*="bar"]:nth-child(3n) {
+            background-color: nth($social-media-colors, 1);
+        }
+        [class*="bar"]:nth-child(3n + 1) {
+            background-color: nth($social-media-colors, 2);
+        }
+        [class*="bar"]:nth-child(3n + 2) {
+            background-color: nth($social-media-colors, 3);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<div class="profile">
+  <div class="header">
+    <img src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/User-Profile-Computer-Icons-Profile-720x720.jpg" alt="User">
+  </div>
+  <div [class]="isEditingFields ? 'information editing' : 'information'">
+    <input type="text" [attr.placeholder]="'k.name' | translate" name="name" [(ngModel)]="user.name" [readOnly]="!isEditingFields">
+    <input type="email" placeholder="Email" name="email" [(ngModel)]="user.mail" [readOnly]="!isEditingFields">
+    <div class="edit-actions">
+      <a class="cancel" (click)="cancelEditFields()" *ngIf="isEditingFields">{{'k.cancel' | translate}}</a>
+      <a *ngIf="isEditingFields" class="edit" (click)="editFields()">{{ 'k.save' | translate}}</a>
+      <a *ngIf="!isEditingFields" class="edit" (click)="editFields()">{{ 'k.edit' | translate}}</a>
+    </div>
+  </div>
+  <div class="social-networks">
+    <div class="social-network">
+      <img src="https://i.pinimg.com/originals/d2/e5/35/d2e5359f8402cb8d3d7b22c463f9013b.png" alt="">
+      <p>{{'profile.fb' | translate}}</p>
+      <a *ngIf="connectedAccounts.FB" (click)="connectFB()">{{ 'k.desconectar' | translate}}</a>
+      <a *ngIf="!connectedAccounts.FB" (click)="connectFB()">{{ 'k.conectar' | translate}}</a>
+    </div>
+    <div class="social-network">
+      <img src="https://i.pinimg.com/originals/b9/f4/df/b9f4dfa0916910b8afb2547a3f6aff30.png" alt="">
+      <p>{{'profile.tw'|translate}}</p>
+      <a *ngIf="connectedAccounts.TW" (click)="connectTW()">{{ 'k.desconectar' | translate}}</a>
+      <a *ngIf="!connectedAccounts.TW" (click)="connectTW()">{{ 'k.conectar' | translate}}</a>
+    </div>
+    <div class="social-network">
+      <img src="https://developer.spotify.com/assets/branding-guidelines/icon3@2x.png" alt="">
+      <p>{{'profile.sp'|translate}}</p>
+      <a *ngIf="connectedAccounts.SP" (click)="connectSP()">{{ 'k.desconectar' | translate}}</a>
+      <a *ngIf="!connectedAccounts.SP" (click)="connectSP()">{{ 'k.conectar' | translate}}</a>
+    </div>
+  </div>
+
+  <div class="extras">
+    <a class="signout" (click)="signOut()">{{ 'k.signout' | translate}}</a>
+  </div>
+</div>

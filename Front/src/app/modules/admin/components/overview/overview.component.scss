@@ -1,0 +1,93 @@
+@import '../../../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+.card{
+    padding: 20px;
+}
+
+.usersTable{
+    border-radius: $borderizado;
+    width: 100%;
+    border-collapse: collapse;
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        position: relative;
+        &.cursor{
+            cursor: pointer;
+        }
+        &.descending {
+            &:after{
+                background:url("../../../../../assets/images/caret-down.png");
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 5px;
+                bottom: 0;
+                width: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+        &.ascending {
+            &:after{
+                background:url("../../../../../assets/images/caret-down.png");
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 5px;
+                bottom: 0;
+                width: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .usersTableOpciones{
+        button{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    }
+
+    .usersTableRedes{
+        .red{
+            margin-right: 10px;
+
+            img{
+                width: 30px;
+            }
+        }
+    }
+}
+
+.pagination {
+    padding: 20px 0;
+    justify-content: flex-end;
+    .page{
+        cursor: pointer;
+        padding: 10px 0;
+        flex: 0 0 40px;
+        border: 1px solid #cccccc;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 5px;
+        &.active{
+            background: #cccccc;
+        }
+    }
+}
+
+.adminBadge{
+    margin-left: 5px;
+    color: $blue;
+}

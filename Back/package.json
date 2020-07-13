@@ -1,0 +1,55 @@
+{
+  "name": "moodtrackerapi",
+  "version": "1.0.0",
+  "description": "Api para proyecto final de desarrollo de aplicaciones web",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node app",
+    "test": "nodemon --exec babel-node app",
+    "dev": "DEBUG=dev NODE_ENV=develop nodemon --exec babel-node app.js",
+    "pretest": "eslint --ignore-path .gitignore ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antony999k/MoodTrackerApi.git"
+  },
+  "author": "Antony, Joan Andoni y Luis Barajas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antony999k/MoodTrackerApi/issues"
+  },
+  "homepage": "https://github.com/antony999k/MoodTrackerApi#readme",
+  "dependencies": {
+    "@azure/ai-text-analytics": "^1.0.0-preview.4",
+    "apos-to-lex-form": "^1.0.5",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "genius-lyrics": "^3.0.0",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.14",
+    "morgan": "^1.10.0",
+    "natural": "^2.1.5",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validatorjs": "^3.18.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "nodemon": "^2.0.4"
+  }
+}

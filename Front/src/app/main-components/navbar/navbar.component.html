@@ -1,0 +1,49 @@
+<router-outlet  (activate)="changeOfRoutes()"></router-outlet>
+<nav class="navbar-mood">
+  <a class="navbar-brand" [routerLink]="isLoggedIn ? ['/dashboard'] : ['/']">
+    <img src="./assets/images/logo.png" width="30" height="30" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="navbarCollapsed">
+    <ul class="links" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/dashboard']">{{'navbar.dashboard' | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin']">{{'navbar.admin' | translate}}</a>
+      </li>
+      <li class="headerProfileContent">
+        <a class="nav-link" [routerLink]="['/profile']" id="userDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img src="https://www.epicentrofestival.com/wp-content/uploads/2019/12/User-Profile-Computer-Icons-Profile-720x720.jpg" alt="User"
+            class="headerProfileImg">
+          <p class="headerProfileContent_name">{{user.name}}</p>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="links" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/quality']" routerLinkActive="router-link-active">
+          {{'navbar.calidad' | translate}}
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/auth/login']">
+          {{'navbar.login' | translate}}
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/auth/signup']">
+          {{'navbar.signup' | translate}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

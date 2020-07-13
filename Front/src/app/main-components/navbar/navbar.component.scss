@@ -1,0 +1,123 @@
+@import '../../../variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+// nav {
+//   height: $navHeight;
+//   width: 100vw;
+//   background-color: white;
+//   z-index: 100;
+
+//   .navInner {
+//     padding: 0 36px;
+//     border-bottom: 1px solid $light;
+//     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, .03);
+//     height: 100%;
+//     justify-content: space-between;
+//     align-items: center;
+
+//     display: flex;
+//     flex-direction: row;
+
+//     .headerInnerL {
+//       height: 70%;
+//       display: flex;
+//       align-items: center;
+
+//       img {
+//         height: 100%;
+//       }
+//     }
+
+//     .headerInnerR {
+//       display: flex;
+//       align-items: center;
+
+//       .headerProfileImg {
+//         width: 38px;
+//         height: 38px;
+//         border-radius: 50px;
+//         margin-left: 20px;
+//       }
+
+//       .headerProfileContent {
+//         margin-left: 10px;
+
+//         .headerProfileContent_name {
+//           font-weight: bold;
+//           font-size: 14px;
+//         }
+//       }
+//     }
+//   }
+// }
+.navbar-mood{
+  @extend .navbar;
+  @extend .navbar-light;
+  @extend .bg-light;
+  @extend .navbar-expand-lg;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
+  height: $navHeight;
+  background-color: white !important;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, .03);
+  @media screen and (max-width: 567px) {
+    padding: 8px 0;
+  }
+  .navbar-brand{
+    @media screen and (max-width: 567px) {
+      margin: 0 16px;
+    }
+  }
+  .navbar-toggler{
+    @media screen and (max-width: 567px) {
+      margin: 0 16px;
+    }
+  }
+  .links{
+    @extend .navbar-nav;
+    @extend .ml-auto;
+    .nav-dropdown{
+      @extend .nav-item;
+      @extend .dropdown;
+    }
+    .nav-drop-toggle{
+      @extend .nav-link;
+      @extend .dropdown-toggle;
+    }
+    .headerProfileContent {
+      @extend .nav-item;
+      .nav-link{
+        display: flex;
+        align-items: center;
+        p{
+          margin: 0;
+        }
+      }
+      .headerProfileImg{
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        object-position: center;
+        margin-right: 10px;
+      }
+      .headerProfileContent_name{
+        flex: 1 0 auto;
+        font-weight: bold;
+      }
+    }
+  }
+  .dropdown-item{
+    cursor: pointer;
+  }
+  .navbar-collapse{
+    background: white;
+    @media screen and (max-width: 567px) {
+      padding: 0 16px;
+    }
+  }
+}

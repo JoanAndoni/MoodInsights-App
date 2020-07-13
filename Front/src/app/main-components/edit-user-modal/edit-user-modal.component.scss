@@ -1,0 +1,60 @@
+@import '../../../variables';
+
+
+.modal-mt-bg {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  .modal-mt {
+    background-color: #f1f1f1;
+    width: 60%;
+    padding: 16px 24px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+
+    .title {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: bold;
+      }
+
+      .textField {
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 2.75rem;
+        background-color: white;
+        border: 1px solid rgb(178, 178, 178);
+        border-radius: $borderizado;
+        transition: all 0.2s ease 0s;
+        padding: 0px 1rem;
+      }
+    }
+  }
+}
+
+.closeEdit{
+    background-color: $red;
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+}
