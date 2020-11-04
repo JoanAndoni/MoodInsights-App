@@ -17,9 +17,9 @@
 
 <p>Creado por:</p>
     <ul>
-        <li>Antony Adrian Morales Rosas - @antony999k</li>
         <li>Joan Andoni</li>
         <li>Luis Barajas</li>
+        <li>Antony Adrian</li>
 </ul>
 
 
@@ -146,26 +146,3 @@ El campo **message** es personalizado y debe estar en ingles
 4. Es necesario contar con el archivo _.env_, este no se puede descargar via Github ya que contiene claves privadas (pedir al administrador del repositorio)
 5. Correr el servidor con `npm start`
 
-## Guía de estilos
-
-### Mensajes en los Commits de Git
-
-- Utilizar oraciones en presente ("Botón añadido" no "Se añadio botón")
-- Comenzar el commit con mayúsculas
-- Cuando solo se cambia documentacion añadir `[ci skip]` en el título del commit
-- Considerar comenzar el commit con un emoji
-  - :rocket: `:rocket:` cuando se lanza una nueva versión
-  - :sparkles: `:sparkles:` cuando se añade nuevo código
-  - :art: `:art:` mejora en el formato/estructura del código
-  - :racehorse: `:racehorse:` mejora en el performance del código
-  - :book: `:book:` cuando se escribe documentación
-  - :bug: `:bug:` cuando se corrige un bug
-  - :fire: `:fire:` cuando se eliminó código o archivos
-
-## Notas
-
-# Changelog
-
-# Ayuda
-
-@antony999k, antony999k@hotmail.com
