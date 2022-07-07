@@ -33,7 +33,7 @@
     "genius-lyrics": "^3.0.0",
     "helmet": "^3.22.0",
     "jsonwebtoken": "^8.5.1",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.9.14",
     "morgan": "^1.10.0",
     "natural": "^2.1.5",
